@@ -25,7 +25,6 @@ async function sendMessage() {
     userInput.value = '';
 
     // 2. "Yazıyor..." baloncuğunu ekle (ve ID'sini sakla ki sonra silelim)
-    // İŞTE EKSİK OLAN KISIM BURASIYDI
     const loadingBubbleId = addLoadingBubble();
 
     try {
@@ -82,7 +81,7 @@ function addMessage(text, sender) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// "Yazıyor..." Baloncuğu Ekleme Fonksiyonu (BU FONKSİYON EKSİKTİ)
+// "Yazıyor..." Baloncuğu Ekleme Fonksiyonu (SENDE EKSİK OLAN KISIM)
 function addLoadingBubble() {
     const id = "loading-" + Date.now(); 
     
@@ -97,7 +96,7 @@ function addLoadingBubble() {
     const content = document.createElement('div');
     content.classList.add('content');
     
-    // Üç nokta HTML yapısı (CSS ile uyumlu)
+    // Üç nokta HTML yapısı
     content.innerHTML = `
         <div class="typing-indicator">
             <div class="dot"></div>
