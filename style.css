@@ -7,12 +7,17 @@
 }
 
 body {
-    background-color: #121212; /* Çok koyu gri/siyah */
+    background-color: #121212; 
     color: #e0e0e0;
     display: flex;
     justify-content: center;
+    /* Eski telefonlar için */
     height: 100vh;
+    /* Yeni telefonlar için SİHİRLİ SATIR: */
+    height: 100dvh; 
     overflow: hidden;
+    /* iOS Safari için ek güvenlik */
+    min-height: -webkit-fill-available;
 }
 
 /* Ana Konteyner */
