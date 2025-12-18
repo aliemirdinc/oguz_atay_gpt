@@ -1,0 +1,162 @@
+/* Genel Ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Çok koyu gri/siyah */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Ana Konteyner */
+.main-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Üst Başlık */
+header {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    background-color: #1e1e1e;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Chat Kutusu */
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Çok mesaj gelince kaydırma çubuğu çıksın */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Mesaj Baloncukları */
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.user-message {
+    align-self: flex-end; /* Kullanıcı sağda */
+    flex-direction: row-reverse;
+}
+
+.message.bot-message {
+    align-self: flex-start; /* Bot solda */
+}
+
+/* Avatar Yuvarlakları */
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.bot-message .avatar {
+    background-color: #10a37f; /* ChatGPT yeşili */
+    color: white;
+}
+
+.user-message .avatar {
+    background-color: #555;
+    color: white;
+}
+
+/* Mesaj İçeriği */
+.content {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bot-message .content {
+    background-color: #2d2d2d;
+    color: #d1d5db;
+    border-top-left-radius: 2px;
+}
+
+.user-message .content {
+    background-color: #10a37f;
+    color: white;
+    border-top-right-radius: 2px;
+}
+
+/* Alt Giriş Alanı */
+.input-area {
+    padding: 20px;
+    border-top: 1px solid #333;
+    background-color: #1e1e1e;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #2d2d2d;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #10a37f;
+}
+
+button {
+    background-color: #10a37f;
+    border: none;
+    border-radius: 8px;
+    width: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #0e8c6d;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
